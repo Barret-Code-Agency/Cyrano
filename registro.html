@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro - Cyrano Latinoamérica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0f1a2c;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 30px 20px 30px;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+
+    .title-block {
+      flex: 1;
+      text-align: left;
+    }
+
+    .country-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .country-info img {
+      width: 168px;
+      height: 90px;
+      object-fit: cover;
+      border: 2px solid white;
+      border-radius: 6px;
+      box-shadow: 0 0 8px #000;
+    }
+
+    .country-info span {
+      font-size: 0.9em;
+      color: white;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: -30px auto 0 auto;
+      background-color: #263e5f;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00000066;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .form-row {
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .form-row label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #ffffffcc;
+      font-size: 1em;
+    }
+
+    .form-row select,
+    .form-row input[type="text"],
+    .form-row input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background-color: #1e2f4a;
+      color: white;
+      font-size: 1em;
+      box-sizing: border-box;
+      transition: box-shadow 0.3s ease;
+      appearance: none;
+    }
+
+    .form-row select:focus,
+    .form-row input:focus {
+      outline: none;
+      box-shadow: 0 0 8px #00c3ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      background-color: white;
+      color: rgb(21, 137, 209);
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0099cc;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .branding {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .title-block { text-align: center; }
+      .country-info { margin-top: 15px; }
+      h1 { font-size: 2em; }
+      h2 { font-size: 1em; }
+      .container { width: 90%; padding: 20px; }
+      .logo { width: 90px; margin-bottom: 20px; }
+      button { font-size: 0.95em; padding: 12px; }
+      .country-info img { width: 120px; height: 65px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="branding">
+      <img src="./Carpeta de pruebas/Images/cabeza-leon.png" alt="Logo Cyrano" class="logo">
+      <div class="title-block">
+        <h1>Cyrano</h1>
+        <h2>Acceso</h2>
+      </div>
+      <div class="country-info" id="countryInfo"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <form>
+        <div class="form-row">
+          <label for="perfil">Perfil</label>
+          <select id="perfil" name="perfil">
+            <option value="control">Control documental</option>
+            <option value="direccion">Dirección de Seguridad</option>
+            <option value="empresa">Empresa de Seguridad</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="vigilador">Vigilador</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario">
+        </div>
+
+        <div class="form-row">
+          <label for="clave">Contraseña</label>
+          <input type="password" id="clave" name="clave" placeholder="Ingrese su contraseña">
+        </div>
+
+        <button type="submit">Registrarse</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Cyrano Latinoamérica. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const countries = {
+      ar: { name: "Argentina", flag: "https://flagcdn.com/ar.svg" },
+      bo: { name: "Bolivia", flag: "https://flagcdn.com/bo.svg" },
+      br: { name: "Brasil", flag: "https://flagcdn.com/br.svg" },
+      cl: { name: "Chile", flag: "https://flagcdn.com/cl.svg" },
+      co: { name: "Colombia", flag: "https://flagcdn.com/co.svg" },
+      cr: { name: "Costa Rica", flag: "https://flagcdn.com/cr.svg" },
+      cu: { name: "Cuba", flag: "https://flagcdn.com/cu.svg" },
+      do: { name: "República Dominicana", flag: "https://flagcdn.com/do.svg" },
+      ec: { name: "Ecuador", flag: "https://flagcdn.com/ec.svg" },
+      sv: { name: "El Salvador", flag: "https://flagcdn.com/sv.svg" },
+      gt: { name: "Guatemala", flag: "https://flagcdn.com/gt.svg" },
+      ht: { name: "Haití", flag: "https://flagcdn.com/ht.svg" },
+      hn: { name: "Honduras", flag: "https://flagcdn.com/hn.svg" },
+      mx: { name: "México", flag: "https://flagcdn.com/mx.svg" },
+      ni: { name: "Nicaragua", flag: "https://flagcdn.com/ni.svg" },
+      pa: { name: "Panamá", flag: "https://flagcdn.com/pa.svg" },
+      py: { name: "Paraguay", flag: "https://flagcdn.com/py.svg" },
+      pe: { name: "Perú", flag: "https://flagcdn.com/pe.svg" },
+      uy: { name: "Uruguay", flag: "https://flagcdn.com/uy.svg" },
+      ve: { name: "Venezuela", flag: "https://flagcdn.com/ve.svg" },
+      pr: { name: "Puerto Rico", flag: "https://flagcdn.com/pr.svg" },
+      bz: { name: "Belice", flag: "https://flagcdn.com/bz.svg" }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("pais");
+
+    if (code && countries[code]) {
+      const info = countries[code];
+      document.getElementById("countryInfo").innerHTML =
+        `<img src="${info.flag}" alt="${info.name}"><span>${info.name}</span>`;
+    }
+  </script>
+</body>
+</html>
